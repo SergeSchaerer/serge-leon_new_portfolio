@@ -3,7 +3,6 @@ import { Linkedin, Mail, Github } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="glass-card py-12 px-4 mt-32 relative overflow-hidden">
-      {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent" />
       
       <div className="container mx-auto text-center relative z-10">

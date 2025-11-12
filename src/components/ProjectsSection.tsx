@@ -13,7 +13,7 @@ const ProjectsSection = () => {
       icon: Briefcase,
       title: "NewsRoom",
       description:
-        "Erste Erfahrungen im Backend-Bereich gesammelt, dabei Python kennengelernt und zahlreiche Endpoints entwickelt. Diese Arbeit hat mir geholfen, ein besseres Verständnis für Backend-Architekturen und Datenverarbeitung zu erlangen.",
+        "Erste Erfahrungen im Backend-Bereich gesammelt und dabei Python kennengelernt, wo ich zahlreiche Endpoints entwickelt habe. Danach erste Kenntnisse mit Angular erworben und die Endpoints aus dem Backend ins Frontend integriert. Zudem habe ich die Rolle des Scrum Masters übernommen und mehrere Meetings geleitet. Diese Arbeit hat mir geholfen, ein tieferes Verständnis für Backend-Architekturen und Datenverarbeitung zu entwickeln.",
       gradient: "from-secondary to-primary",
     },
     {

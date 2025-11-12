@@ -1,5 +1,5 @@
 import { Play } from "lucide-react";
-import bewerbungsVideo from "@/assets/Bewerbungsvideo2.mov";
+import bewerbungsVideo from "@/assets/Bewerbungsvideo3.mov";
 
 const VideoSection = () => {
   return (

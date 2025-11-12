@@ -78,7 +78,7 @@ const Navigation = () => {
             ))}
             <a href="/game">
               <Button className="bg-gradient-primary hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-glow-primary font-semibold">
-                🎮 Game
+                Game
               </Button>
             </a>
           </div>
