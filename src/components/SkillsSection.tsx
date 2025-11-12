@@ -6,52 +6,64 @@ const SkillsSection = () => {
       icon: Code,
       title: "Web Development",
       items: ["HTML & CSS", "JavaScript", "TypeScript", "React", "Java", "MySQL", "Python", "Fast API", "Angular"],
+      color: "from-primary to-accent",
     },
     {
       icon: Users,
       title: "Sozialkompetenzen",
       items: ["Teamarbeit", "Kommunikation", "Sozial", "Offen", "Empathie", "Konfliktlösung", "Verlässlichkeit"],
+      color: "from-secondary to-accent",
     },
     {
       icon: Trophy,
       title: "Tennis",
       items: ["TC Roggwil", "Seit 8 Jahren", "Spass"],
+      color: "from-accent to-primary",
     },
     {
       icon: Heart,
       title: "Freunde",
       items: ["Draussen sein", "Basketball Spielen", "Grillieren"],
+      color: "from-secondary to-primary",
     },
   ];
 
   return (
     <section id="skills" className="min-h-screen flex items-center justify-center px-4 py-20">
       <div className="container mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">
-          Fähigkeiten
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-7xl font-bold gradient-text font-space mb-4">
+            Fähigkeiten
+          </h2>
+          <p className="text-xl text-muted-foreground">Was ich mitbringe</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {skills.map((skill, index) => {
             const Icon = skill.icon;
             return (
               <div
                 key={index}
-                className="glass-card rounded-xl p-6 md:p-8 hover:scale-105 transition-transform duration-300"
+                className="glass-card rounded-3xl p-8 md:p-10 hover:scale-105 transition-all duration-500 glow-border group"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 rounded-lg bg-gradient-primary">
-                    <Icon className="w-6 h-6 text-white" />
+                <div className="flex items-center gap-4 mb-8">
+                  <div className={`p-4 rounded-2xl bg-gradient-to-br ${skill.color} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold">{skill.title}</h3>
+                  <h3 className="text-3xl font-bold font-space">{skill.title}</h3>
                 </div>
-                <ul className="space-y-2">
+                <div className="grid grid-cols-2 gap-3">
                   {skill.items.map((item, i) => (
-                    <li key={i} className="text-muted-foreground flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                      {item}
-                    </li>
+                    <div
+                      key={i}
+                      className="flex items-center gap-2 bg-muted/30 rounded-xl px-3 py-2 hover:bg-muted/50 transition-colors duration-300"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-secondary" />
+                      <span className="text-sm font-medium">{item}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             );
           })}

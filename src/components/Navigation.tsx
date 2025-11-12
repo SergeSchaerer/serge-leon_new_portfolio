@@ -20,7 +20,6 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      // Update active section based on scroll position
       const sections = navItems.map((item) => item.id);
       const current = sections.find((section) => {
         const element = document.getElementById(section);
@@ -47,13 +46,15 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-card py-3" : "bg-transparent py-5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? "glass-card py-3" : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-bold gradient-text">Bewerbungswebseite</div>
+          <div className="text-2xl font-bold font-space gradient-text">
+            Bewerbungswebseite
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -61,51 +62,56 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`transition-all duration-300 hover:text-primary ${
+                className={`transition-all duration-300 font-medium relative group ${
                   activeSection === item.id
-                    ? "text-primary font-semibold"
-                    : "text-foreground/80"
+                    ? "text-primary"
+                    : "text-foreground/70 hover:text-foreground"
                 }`}
               >
                 {item.label}
+                <span
+                  className={`absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-primary rounded-full transition-transform duration-300 ${
+                    activeSection === item.id ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
               </button>
             ))}
             <a href="/game">
-              <Button variant="outline" className="glass-card border-primary/50 hover:bg-primary/10">
-                Game
+              <Button className="bg-gradient-primary hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-glow-primary font-semibold">
+                🎮 Game
               </Button>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-foreground hover:text-primary transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 glass-card rounded-lg p-4">
-            <div className="flex flex-col gap-3">
+          <div className="md:hidden mt-6 glass-card rounded-2xl p-6 animate-fade-in-up">
+            <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-left py-2 transition-all duration-300 ${
+                  className={`text-left py-3 px-4 rounded-xl transition-all duration-300 font-medium ${
                     activeSection === item.id
-                      ? "text-primary font-semibold"
-                      : "text-foreground/80"
+                      ? "text-primary bg-primary/10"
+                      : "text-foreground/70 hover:text-foreground hover:bg-muted/50"
                   }`}
                 >
                   {item.label}
                 </button>
               ))}
               <a href="/game">
-                <Button variant="outline" className="w-full glass-card border-primary/50 hover:bg-primary/10">
-                  Game
+                <Button className="w-full bg-gradient-primary hover:opacity-90 font-semibold text-lg py-6">
+                  🎮 Game
                 </Button>
               </a>
             </div>
