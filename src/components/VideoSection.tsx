@@ -1,4 +1,5 @@
 import { Play } from "lucide-react";
+import bewerbungsVideo from "@/assets/Bewerbungsvideo2.mov";
 
 const VideoSection = () => {
   return (
@@ -14,14 +15,15 @@ const VideoSection = () => {
         <div className="glass-card rounded-3xl p-4 md:p-8 glow-border group hover:scale-105 transition-all duration-500">
           <div className="relative aspect-video w-full rounded-2xl overflow-hidden">
             <div className="absolute inset-0 bg-gradient-primary opacity-20 group-hover:opacity-30 transition-opacity duration-300" />
-            <iframe
+            <video
               className="w-full h-full relative z-10"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="Bewerbungsvideo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
-            />
+              controls
+              preload="metadata"
+            >
+              <source src={bewerbungsVideo} type="video/quicktime" />
+              <source src={bewerbungsVideo} type="video/mp4" />
+              Ihr Browser unterstützt das Video-Tag nicht.
+            </video>
           </div>
           <div className="mt-6 flex items-center justify-center gap-3 text-muted-foreground">
             <Play className="w-5 h-5 text-primary" />

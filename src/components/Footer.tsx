@@ -26,21 +26,11 @@ const Footer = () => {
           </a>
           
           <a
-            href="mailto:serge@example.com"
+            href="mailto:serge-leon.schaerer@swisscom.com"
             className="flex items-center gap-2 glass-card px-6 py-3 rounded-xl hover:scale-110 transition-all duration-300 glow-border group"
           >
             <Mail className="w-5 h-5 text-secondary group-hover:animate-pulse" />
             <span className="font-medium">E-Mail</span>
-          </a>
-
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 glass-card px-6 py-3 rounded-xl hover:scale-110 transition-all duration-300 glow-border group"
-          >
-            <Github className="w-5 h-5 text-accent group-hover:animate-pulse" />
-            <span className="font-medium">GitHub</span>
           </a>
         </div>
 
